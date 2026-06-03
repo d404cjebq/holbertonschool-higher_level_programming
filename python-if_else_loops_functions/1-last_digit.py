@@ -2,12 +2,10 @@
 import random
 number = random.randint(-10000, 10000)
 
-# استخراج الرقم الأخير والتعامل مع الأرقام السالبة بشكل صحيح
 if number < 0:
     last_digit = number % -10
 else:
     last_digit = number % 10
-
 # طباعة الجزء الأول الثابت من المخرج
 print(f"Last digit of {number} is {last_digit}", end=" ")
 
@@ -18,4 +16,3 @@ elif last_digit == 0:
     print("and is 0")
 else:
     print("and is less than 6 and not 0")
-    
