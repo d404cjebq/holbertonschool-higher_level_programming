@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    # التحقق من أن المدخل نص وليس فارغاً أو None
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
     roman_dict = {
@@ -10,8 +11,10 @@ def roman_to_int(roman_string):
     length = len(roman_string)
     for i in range(length):
         current_val = roman_dict.get(roman_string[i], 0)
-        if i + 1 < length and current_val < roman_dict.get(roman_string[i + 1], 0):
+        next_val = roman_dict.get(roman_string[i + 1], 0) if i + 1 < length \
+            else 0
+        if current_val < next_val:
             total -= current_val
         else:
-            total += current_val 
+            total += current_val
     return total
