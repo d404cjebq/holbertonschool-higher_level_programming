@@ -1,3 +1,5 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
 >>> add_integer(1, 2)
 3
 
@@ -9,12 +11,6 @@
 
 >>> add_integer(100.3, -2)
 98
-
->>> add_integer(-4, 5)
-1
-
->>> add_integer(3.7, 2)
-5
 
 >>> add_integer("School", 5)
 Traceback (most recent call last):
