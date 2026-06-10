@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that contains add_integer function."""
+"""Module containing add_integer function."""
 
 
 def add_integer(a, b=98):
@@ -14,7 +14,7 @@ def add_integer(a, b=98):
     try:
         a = int(a)
         b = int(b)
-    except OverflowError:
-        raise OverflowError
+    except (ValueError, OverflowError):
+        raise
 
     return a + b
