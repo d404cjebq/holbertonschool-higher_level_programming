@@ -55,3 +55,19 @@ Non-integer/non-float raises TypeError:
     >>> add_integer("hello", 2)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+Float overflow raises OverflowError:
+
+::
+
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Float NaN raises ValueError:
+
+::
+
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
