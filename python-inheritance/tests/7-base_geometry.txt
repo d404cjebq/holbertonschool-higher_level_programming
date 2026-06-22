@@ -1,0 +1,59 @@
+===================================
+How to use the BaseGeometry class
+===================================
+
+Import the class:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Instantiate the class:
+    >>> bg = BaseGeometry()
+
+-------------------------------
+Testing integer_validator
+-------------------------------
+
+1. Valid integer cases (should not raise any exception):
+    >>> bg.integer_validator("width", 10)
+    >>> bg.integer_validator("height", 100)
+
+2. Testing TypeError for non-integers:
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator("weight", 5.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: weight must be an integer
+
+    >>> bg.integer_validator("flag", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: flag must be an integer
+
+    >>> bg.integer_validator("items", [1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: items must be an integer
+
+3. Testing ValueError for values <= 0:
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
+
+-------------------------------
+Testing area method
+-------------------------------
+
+The area method should still raise an Exception:
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
