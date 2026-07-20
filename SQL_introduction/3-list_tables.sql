@@ -1,2 +1,2 @@
 --  script that lists all the tables 
-SELECT * FROM mysql;
+SHOW TABLES FROM mysql;
