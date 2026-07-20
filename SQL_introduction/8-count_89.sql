@@ -1,2 +1,3 @@
 -- script that displays the number
-SELECT id FROM first_table;
+SELECT first_table;
+WHERE id = 89;
