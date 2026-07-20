@@ -1,2 +1,2 @@
 -- script that prints
-SHOW CREATE TABLE first_table FROM hbtn_0c_0; 
+SHOW TABLE first_table FROM hbtn_0c_0; 
