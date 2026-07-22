@@ -24,10 +24,13 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
         state_name
     )
-    cursor.execute(query)
 
-    for row in cursor.fetchall():
-        print(row)
+    try:
+        cursor.execute(query)
+        for row in cursor.fetchall():
+            print(row)
+    except MySQLdb.Error:
+        pass
 
     cursor.close()
     db.close()
