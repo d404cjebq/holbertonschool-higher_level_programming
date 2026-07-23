@@ -1,31 +1,26 @@
 #!/usr/bin/python3
 """
-This module lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa using MySQLdb.
+Displays all values in states table where name matches argument
 """
-import MySQLdb
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
-        db=database
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
-
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+        "SELECT * FROM states WHERE name LIKE BINARY '{}' "
+        "ORDER BY states.id ASC".format(sys.argv[4])
     )
-
-    for row in cursor.fetchall():
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
-
     cursor.close()
     db.close()
+    
