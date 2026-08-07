@@ -8,4 +8,3 @@ if (Number.isNaN(size)) {
     console.log('X'.repeat(size));
   }
 }
-
