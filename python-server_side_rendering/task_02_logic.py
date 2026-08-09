@@ -9,7 +9,12 @@ def items():
     with open('items.json', 'r') as file:
         data = json.load(file)
 
-    return render_template('items.html', items=data['items'])
+    if isinstance(data, dict):
+        items_list = data.get('items', [])
+    else:
+        items_list = []
+
+    return render_template('items.html', items=items_list)
 
 
 if __name__ == '__main__':
