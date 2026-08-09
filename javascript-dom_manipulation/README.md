@@ -59,4 +59,4 @@ http://localhost:8000/0-main.html
 
 ## Author
 
-Holberton School Student
+Dhay Aldhwayan
